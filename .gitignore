@@ -1,0 +1,3 @@
+node_modules
+src/database.sql
+src/config.js
