@@ -1,16 +1,5 @@
 const router = require('express').Router();
 
-const testUser = {
-  nombre: 'sebastian',
-  apellido: 'penafiel',
-  email: 'asd@asd.com',
-  edad: 25,
-  ciudad: 'samborondon',
-  provincia: 'guayas',
-  tel: '123456789',
-  cargo: 'gerente'
-};
-
 module.exports = async () => {
   const connection = await require('./connect');
 
