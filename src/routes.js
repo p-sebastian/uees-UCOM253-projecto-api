@@ -22,7 +22,7 @@ const getEmployees = connection => async (req, res) => {
   `);
   // [0]: rows
   // [1]: fields
-  res.json(data[0]);
+  res.json(data[0][0]);
 }
 
 const verify = (req, res, next) => {
