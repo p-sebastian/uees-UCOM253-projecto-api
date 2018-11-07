@@ -8,11 +8,17 @@ module.exports = async () => {
   return router;
 };
 
+/**
+ * CREATE PROCEDURE ALDEBERAN.show_employees()
+ *  SELECT ALDEBERAN.Empleados.*, ALDEBERAN.Persona.*
+ *    FROM ALDEBERAN.Persona RIGHT JOIN ALDEBERAN.Empleados
+ *    ON ALDEBERAN.Persona.id_persona = ALDEBERAN.Empleados.id_persona;
+ * @function {show_employees} Shows employees in Aldeberan; 
+ */
+
 const getEmployees = connection => async (req, res) => {
   let data = await connection.query(`
-    SELECT ALDEBERAN.Empleados.*, ALDEBERAN.Persona.*
-    FROM ALDEBERAN.Persona RIGHT JOIN ALDEBERAN.Empleados
-    ON ALDEBERAN.Persona.id_persona = ALDEBERAN.Empleados.id_persona;
+    CALL ALDEBERAN.show_employees();
   `);
   // [0]: rows
   // [1]: fields
