@@ -3,8 +3,8 @@ const router = require('express').Router();
 module.exports = async () => {
   const connection = await require('./connect');
 
-  router.get('/user', getEmployees(connection));
-  router.post('/user', verify, createUser(connection));
+  router.get('/', getEmployees(connection));
+  router.post('/', verify, createUser(connection));
   return router;
 };
 
